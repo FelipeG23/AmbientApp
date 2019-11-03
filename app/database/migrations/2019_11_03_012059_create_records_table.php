@@ -18,6 +18,7 @@ class CreateRecordsTable extends Migration
             $table->float('temperature');
             $table->float('humidity');
             $table->float('pollution');
+            $table->float('sound');
             $table->integer('sensor_id')->unsigned();
             $table->dateTime('take_at');
             $table->timestamps();
