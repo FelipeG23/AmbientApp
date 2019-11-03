@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template.body');
+});
+Route::get('/login', function () {
+    return view('login');
 });
