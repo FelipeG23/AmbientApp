@@ -38,7 +38,7 @@
     <div class="overbox">
         <div class="material-button alt-2"><span class="shape"></span></div>
 
-        <div class="title">Registrar Usuario (Aún no disponible)</div>
+        <div class="title">Registrar Usuario</div>
 
         <div class="input">
             <label for="regname">Nombre</label>
@@ -63,7 +63,9 @@
             <input type="password" name="reregpass" id="reregpass">
             <span class="spin"></span>
         </div>
-
+         <div class="button login">
+            <button><span>Registrar</span> <i class="fa fa-check"></i></button>
+        </div>
 
     </div>
 
