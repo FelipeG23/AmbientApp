@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('template.body');
-});
-Route::get('/login', function () {
-    return view('login');
-});
+Auth::routes();
+
+Route::get('/', 'locationsController@index')->name('home');
