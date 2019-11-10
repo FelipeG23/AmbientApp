@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Location;
 use Illuminate\Http\Request;
 
 class LocationsController extends Controller
@@ -45,7 +46,10 @@ class LocationsController extends Controller
      */
     public function show($id)
     {
-        //
+        $location = new Location();
+        //$location = Location::find($id);
+        $sensors = $location->sensors();
+        return view('user.location.show');
     }
 
     /**
