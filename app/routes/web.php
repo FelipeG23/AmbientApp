@@ -16,3 +16,4 @@ Auth::routes();
 Route::get('/', 'locationsController@index')->name('home');
 Route::get('/location/{id}', 'locationsController@show')->name('location');
 Route::get('/location/{id}/history', 'locationsController@history')->name('history');
+Route::post('/location/{id}/comment', 'locationsController@comment')->name('comment.add');

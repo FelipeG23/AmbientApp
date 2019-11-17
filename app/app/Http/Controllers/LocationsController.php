@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
@@ -9,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class LocationsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -67,19 +73,15 @@ class LocationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function comment(Request $request, $id)
     {
-        //
+        $comment = new Comment();
+        $comment->location_id = $id;
+        $comment->user_id = auth()->id();
+        $comment->comment = $request->comment;
+
+        $comment->save();
+        return redirect()->route('location', ['id' => $id]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

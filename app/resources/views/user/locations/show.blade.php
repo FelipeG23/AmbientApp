@@ -126,16 +126,35 @@
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-header ">
-                        <h5 class="card-title">Users Behavior</h5>
-                        <p class="card-category">24 Hours performance</p>
+                        <h5 class="card-title">Comentarios</h5>
                     </div>
-                    <div class="card-body ">
-                        <canvas id=chartHours width="400" height="100"></canvas>
-                    </div>
-                    <div class="card-footer ">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-history"></i> Updated 3 minutes ago
+                    <div class="card-body">
+                        @foreach($location->comments as $comment)
+                            <div class="row justify-content-center">
+                                <div class="col-1">
+                                    <img src="{{ asset('img/IconoArbol.png') }}" class="img img-rounded img-fluid"/>
+                                    <p class="text-secondary text-center">{{ date('d M Y h:s A', strtotime($comment->created_at)) }}</p>
+                                </div>
+                                <div class="col-9 my-auto">
+                                    <div class="clearfix" style="font-size: 1.33rem">{{ $comment->user->name }}</div>
+                                    <p>{{ $comment->comment }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                        <div class="row justify-content-center">
+                            <div class="col-9 my-auto">
+                                <div class="clearfix" style="font-size: 1.33rem">Comentar</div>
+                                <form action="{{ route('comment.add', ['id' => $location->id]) }}" class="form" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <textarea name="comment" id="comment" cols="30" rows="10" class="form-control" placeholder="Escribe tu comentario">
+                                        </textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Comentar</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

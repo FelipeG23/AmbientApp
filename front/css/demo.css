@@ -187,3 +187,7 @@
   outline: none;
   display: none;
 }
+
+.card-inner{
+  margin-left: 4rem;
+}
