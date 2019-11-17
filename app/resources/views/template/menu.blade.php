@@ -5,26 +5,13 @@
                 <img src="{{ asset('img/IconoArbol.png') }}">
             </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="{{ route('home') }}" class="simple-text logo-normal">
             Parques
         </a>
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="active ">
-                <a href="#">
-                    <i class="nc-icon nc-pin-3"></i>
-                    <p>Parques</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="nc-icon nc-bell-55"></i>
-                    <p>Notificaciones</p>
-                </a>
-            </li>
-
-
+            <li class="active "><a href="{{ route('home') }}"><i class="nc-icon nc-pin-3"></i><p>Parques</p></a></li>
         </ul>
     </div>
 </div>
