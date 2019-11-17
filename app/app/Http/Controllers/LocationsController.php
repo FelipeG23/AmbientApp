@@ -46,9 +46,18 @@ class LocationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function history($id)
     {
-        //
+        $location = Location::find($id);
+        $reords = DB::table('records')
+            ->join('sensors', 'sensors.id', '=', 'records.sensor_id')
+            ->join('locations', 'locations.id', '=', 'sensors.location_id')
+            ->select('records.*')
+            ->where('locations.id', '=', $id)
+            ->get();
+
+        return view('user.locations.history', ['records' => $reords, 'location' => $location]);
+
     }
 
     /**

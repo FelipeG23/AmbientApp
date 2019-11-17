@@ -15,3 +15,4 @@ Auth::routes();
 
 Route::get('/', 'locationsController@index')->name('home');
 Route::get('/location/{id}', 'locationsController@show')->name('location');
+Route::get('/location/{id}/history', 'locationsController@history')->name('history');

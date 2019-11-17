@@ -1,9 +1,21 @@
 @extends('template.main')
 
-@section('title', 'Example')
+@section('title', $location->name)
 
 @section('content')
     <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            {{ $location->name }}
+                            <a href="{{ route('history', ['id' => $location->id]) }}" class="btn btn-success float-right"><i class="fa fa-history"></i> Historial</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
@@ -129,6 +141,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection
