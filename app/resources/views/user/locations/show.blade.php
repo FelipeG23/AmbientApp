@@ -17,7 +17,7 @@
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
                                     <p class="card-category">Temperatura</p>
-                                    <p class="card-title">18 °C
+                                    <p class="card-title">{{ round($records->temperature, 1) }} °C
                                     <p>
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-refresh"></i> Actualizar
+                            <i class="fa fa-calendar"></i> {{ date('d M Y', strtotime($records->take_at)) }}
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
                                     <p class="card-category">Sonido</p>
-                                    <p class="card-title">65 dB
+                                    <p class="card-title">{{ round($records->sound, 1) }} dB
                                     <p>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-calendar-o"></i> Ayer
+                            <i class="fa fa-calendar"></i> {{ date('d M Y', strtotime($records->take_at)) }}
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
                                     <p class="card-category">Contaminación</p>
-                                    <p class="card-title">13'31µg/m3
+                                    <p class="card-title">{{ round($records->pollution, 1) }} µg/m3
                                     <p>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-clock-o"></i> Última Hora
+                            <i class="fa fa-calendar"></i> {{ date('d M Y', strtotime($records->take_at)) }}
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
                                     <p class="card-category">Humedad</p>
-                                    <p class="card-title">+45K
+                                    <p class="card-title">{{ round($records->humidity, 1) }} K
                                     <p>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-refresh"></i> Última Hora
+                            <i class="fa fa-calendar"></i> {{ date('d M Y', strtotime($records->take_at)) }}
                         </div>
                     </div>
                 </div>
