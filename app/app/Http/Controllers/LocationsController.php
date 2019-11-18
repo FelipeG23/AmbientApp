@@ -22,7 +22,7 @@ class LocationsController extends Controller
      */
     public function index()
     {
-        return view('user.locations.index');
+        return view('user.locations.index', ['locations' => Location::all()]);
     }
 
     /**

@@ -45,6 +45,8 @@
 
 <!-- JS -->
 <script src="{{ asset('js/demo.js') }}"></script>
+
+@yield('script')
 </body>
 
 </html>
